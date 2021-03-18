@@ -1,4 +1,10 @@
+import {types} from './types';
+
 export const setFavorite = payload => ({
-    type: 'SET_FAVORITE',
+    type: types.setFavorite,
+    payload,
+});
+export const deleteFavorite = payload => ({
+    type: types.deleteFavorite,
     payload,
 });
