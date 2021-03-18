@@ -24,3 +24,10 @@ export const loginRequest = formValues => (dispatch) =>{
         payload: formValues
     })
 }
+export const logoutRequest = () => (dispatch) =>{
+    const noUser = {}
+    dispatch({
+        type: types.logout,
+        payload: noUser
+    })
+}
