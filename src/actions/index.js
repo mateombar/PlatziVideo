@@ -18,16 +18,21 @@ export const deleteFavorite = idFavorite => (dispatch, getState) => {
     })
 };
 
-export const loginRequest = formValues => (dispatch) =>{
+export const loginRequest = formValues => (dispatch) => {
     dispatch({
         type: types.login,
         payload: formValues
     })
 }
-export const logoutRequest = () => (dispatch) =>{
-    const noUser = {}
+export const logoutRequest = () => (dispatch) => {
     dispatch({
         type: types.logout,
-        payload: noUser
+    })
+}
+
+export const registerRequest = (formValues) => (dispatch) => {
+    dispatch({
+        type: types.register,
+        payload: formValues
     })
 }

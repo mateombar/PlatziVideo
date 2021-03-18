@@ -20,6 +20,11 @@ const reducer = (state, action) => {
         case types.logout:
             return {
                 ...state,
+                user: {}
+            }
+        case types.register:
+            return {
+                ...state,
                 user: action.payload
             }
         default: return state;

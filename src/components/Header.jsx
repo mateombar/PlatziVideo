@@ -31,7 +31,7 @@ const Header = (props) => {
         <ul>
           {hasUser && (
             <li>
-              <Link to="/adawd">{user.email}</Link>
+              <Link to="/adawd">{user.name}</Link>
             </li>
           )}
           {hasUser ? (
