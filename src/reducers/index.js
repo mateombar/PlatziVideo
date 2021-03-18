@@ -10,7 +10,7 @@ const reducer = (state, action) => {
         case types.deleteFavorite:
             return {
                 ...state,
-                myList: state.myList.filter((item) => item.id !== action.payload)
+                myList: action.payload
             }
         default: return state;
     }

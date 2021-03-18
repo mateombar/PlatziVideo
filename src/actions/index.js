@@ -1,10 +1,19 @@
-import {types} from './types';
-
-export const setFavorite = payload => ({
-    type: types.setFavorite,
-    payload,
-});
-export const deleteFavorite = payload => ({
-    type: types.deleteFavorite,
-    payload,
-});
+import { types } from './types';
+export const setFavorite = (favorite) => (dispatch, getState) => {
+    const { myList } = getState();
+    const exist = myList.find(item => item.id === favorite.id)
+    if (!exist) {
+        dispatch({
+            type: types.setFavorite,
+            payload: favorite,
+        })
+    }
+};
+export const deleteFavorite = idFavorite => (dispatch, getState) => {
+    const { myList } = getState();
+    const filteredMyList = myList.filter((item) => item.id !== idFavorite)
+    dispatch({
+        type: types.deleteFavorite,
+        payload: filteredMyList,
+    })
+};
