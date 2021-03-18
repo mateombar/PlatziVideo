@@ -19,7 +19,7 @@ const Header = () => (
           <Link to="/">Cuenta</Link>
         </li>
         <li>
-          <Link to="/">Iniciar Sesión</Link>
+          <Link to="/login">Iniciar Sesión</Link>
         </li>
       </ul>
     </div>
