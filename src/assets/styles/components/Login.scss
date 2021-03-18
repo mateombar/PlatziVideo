@@ -20,34 +20,41 @@
   flex-direction: column;
   justify-content: space-around;
   min-height: 700px;
-  padding: 60px 68px 40px;
+  padding: 20px;
   width: 300px;
+  h2{
+    text-align: center;
+  }
 }
 
 .login__container--form {
   display: flex;
   flex-direction: column;
-}
-
-.login__container--form label {
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .login__container--remember-me {
   color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
-}
-
-.login__container--remember-me a {
-  color: white;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.login__container--remember-me a:hover {
-  text-decoration: underline;
+  a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    padding-top: 4px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  label {
+    font-size: 14px;
+    padding-right: 5px;
+  }
 }
 
 .login__container--social-media > div {
@@ -55,6 +62,7 @@
   display: flex;
   font-size: 14px;
   margin-bottom: 10px;
+  justify-content: center;
 }
 
 .login__container--social-media > div > img {
@@ -64,6 +72,7 @@
 
 .login__container--register {
   font-size: 14px;
+  text-align: center;
 }
 
 .login__container--register a {
