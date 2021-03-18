@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import { gravatar } from "../utils/gravatar";
 import {logoutRequest} from '../actions/index';
 import "../assets/styles/components/Header.scss";
@@ -57,3 +58,7 @@ const mapDispatchToPops ={
   logoutRequest
 }
 export default connect(mapStateToProps, mapDispatchToPops)(Header);
+
+Header.propTypes = {
+  user: PropTypes.object
+};
