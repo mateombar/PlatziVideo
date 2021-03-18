@@ -1,17 +1,23 @@
 import React,{useState} from "react";
-import { Link } from "react-router-dom";
+import {connect} from 'react-redux';
+import { Link, useHistory  } from "react-router-dom";
+import {loginRequest} from '../actions/index';
 import {useInputValue} from '../hooks/useInputValue';
 import googleIcon from "../assets/static/google-icon.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
 
 import "../assets/styles/components/Login.scss";
-const Login = () => {
+const Login = (props) => {
   const email = useInputValue('');
   const password = useInputValue('');
+  const loginRequest = props.loginRequest;
+  const history = useHistory();
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    console.log({email: email.value, password: password.value});
+    const formValues = {email: email.value, password: password.value}
+    loginRequest(formValues);
+    history.push('/');
   }
 
   return (
@@ -45,5 +51,7 @@ const Login = () => {
     </section>
   );
 };
-
-export default Login;
+const mapDispatchToProps = {
+  loginRequest
+}
+export default connect(null,mapDispatchToProps)(Login);

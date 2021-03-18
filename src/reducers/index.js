@@ -12,6 +12,11 @@ const reducer = (state, action) => {
                 ...state,
                 myList: action.payload
             }
+        case types.login:
+            return {
+                ...state,
+                user: action.payload
+            }
         default: return state;
     }
 }

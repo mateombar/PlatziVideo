@@ -17,3 +17,10 @@ export const deleteFavorite = idFavorite => (dispatch, getState) => {
         payload: filteredMyList,
     })
 };
+
+export const loginRequest = formValues => (dispatch) =>{
+    dispatch({
+        type: types.login,
+        payload: formValues
+    })
+}
