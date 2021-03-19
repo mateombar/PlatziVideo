@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Search from "../components/Search";
+import Header from "../components/Header";
 import Categories from "../components/Categories";
 import Carousel from "../components/Carousel";
 import CarouselItem from "../components/CarouselItem";
 import useInitialState from "../hooks/useInitialState";
 import "../assets/styles/App.scss";
 
-const Home = ({myList, trends, originals}) => {
+const Home = ({ myList, trends, originals }) => {
   return (
     <>
+      <Header />
       <Search />
       {myList.length > 0 && (
         <Categories title="Mi Lista">
           <Carousel>
             {myList.map((item) => (
-              <CarouselItem key={item.id} {...item} isMyList={true}/>
+              <CarouselItem key={item.id} {...item} isMyList={true} />
             ))}
           </Carousel>
         </Categories>
@@ -23,14 +25,14 @@ const Home = ({myList, trends, originals}) => {
       <Categories title="Tendencias">
         <Carousel>
           {trends.map((item) => (
-            <CarouselItem key={item.id} {...item} isMyList={false}/>
+            <CarouselItem key={item.id} {...item} isMyList={false} />
           ))}
         </Carousel>
       </Categories>
       <Categories title="Originales de Platzi Video">
         <Carousel>
           {originals.map((item) => (
-            <CarouselItem key={item.id} {...item} isMyList={false}/>
+            <CarouselItem key={item.id} {...item} isMyList={false} />
           ))}
         </Carousel>
       </Categories>

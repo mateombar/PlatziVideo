@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useHistory, useParams, Redirect } from "react-router-dom";
+import Header from "../components/Header";
 import { getVideoSource } from "../actions/index";
 import "../assets/styles/components/Player.scss";
 const Player = (props) => {
@@ -15,16 +16,19 @@ const Player = (props) => {
     return <h2>LOADING ....</h2>;
   }
   return hasPlaying ? (
-    <div className="Player">
-      <video controls autoPlay>
-        <source src={playing.source} type="video/mp4" />
-      </video>
-      <div className="Player-back">
-        <button type="button" onClick={() => history.goBack()}>
-          Regresar
-        </button>
+    <>
+      <Header />
+      <div className="Player">
+        <video controls autoPlay>
+          <source src={playing.source} type="video/mp4" />
+        </video>
+        <div className="Player-back">
+          <button type="button" onClick={() => history.goBack()}>
+            Regresar
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   ) : (
     <Redirect to="/404/" />
   );
