@@ -36,3 +36,15 @@ export const registerRequest = (formValues) => (dispatch) => {
         payload: formValues
     })
 }
+
+export const getVideoSource = (id) => async (dispatch, getState) => {
+    dispatch({
+        type: types.loadingPlaying,
+    })
+    const { trends, originals } = getState();
+    const selected = await trends.find(item => item.id === Number(id)) || originals.find(item => item.id === Number(id)) || []
+    await dispatch({
+        type: types.getVideoSrc,
+        payload: selected
+    })
+}

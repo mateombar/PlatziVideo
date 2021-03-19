@@ -1,4 +1,4 @@
-import {types} from '../actions/types';
+import { types } from '../actions/types';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -6,6 +6,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 myList: [...state.myList, action.payload]
+            }
+        case types.loadingPlaying:
+            return {
+                ...state,
+                loadingPlaying: true,
             }
         case types.deleteFavorite:
             return {
@@ -26,6 +31,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 user: action.payload
+            }
+        case types.getVideoSrc:
+            return {
+                ...state,
+                playing: action.payload,
+                loadingPlaying: false,
             }
         default: return state;
     }
